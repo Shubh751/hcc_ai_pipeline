@@ -23,6 +23,6 @@
 			
 # Note - 
 - ("gemini-2.5-flash") model is used in code. 
-- This code is working with Langgraph AI studio only with direct execution and docker
+- This code is working for Langgraph AI studio only with direct execution and docker
 
 
