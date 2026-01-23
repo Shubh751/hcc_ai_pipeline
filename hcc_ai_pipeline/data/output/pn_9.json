@@ -1,0 +1,50 @@
+{
+  "filename": "pn_9",
+  "raw_text": "\"Patient\n\nName: ANDERSON, AMELIA (49yo, F)\nID#: 5839\nAppt. Date/Time: 03/20/2025 09:30AM\nDOB: 11/17/1975\nService Dept.: athenaHealth\nProvider: DR. KENNEDY\nInsurance:\nMed Primary: KAISER PERMANENTE\nInsurance #: 887766554\n\nChief Complaint\nFollowup: Fibromyalgia and hypertension management\n\nPatient\u2019s Pharmacies\nCVS PHARMACY 1065 (ERX): 455 PINE STREET, BIDDEFORD, ME 04005, Ph (207) 555-6655, Fax (207) 555-3322\nCVS PHARMACY 1065 (ERX): 455 PINE STREET, BIDDEFORD, ME 04005, Ph (207) 555-6655, Fax (207) 555-3322\nCVS PHARMACY 1065 (ERX): 455 PINE STREET, BIDDEFORD, ME 04005, Ph (207) 555-6655, Fax (207) 555-3322\n\nVitals\nBP: 138/82 sitting R arm 03/20/2025 09:15 am\nBMI: 29.1 03/20/2025 09:20 am\nHt: 5 ft 6 in 03/20/2025 09:19 am\nWt: 180 lbs 03/20/2025 09:20 am\nT: 98.2 F\u00b0 03/20/2025 09:15 am\nHR: 74 03/20/2025 09:15 am\n\nAllergies\nReviewed Allergies\n\nMedications\nReviewed Medications\n\nName        Date        Source\nLyrica 75 mg capsule        12/01/2024        prescribed by DR. KENNEDY\nTake 1 capsule(s) twice daily by oral route for fibromyalgia pain.                \nAmlodipine 10 mg tablet        09/05/2023        prescribed by DR. KENNEDY\nTake 1 tablet(s) once daily by oral route for hypertension.                \nAtorvastatin 20 mg tablet        04/12/2024        prescribed by DR. GREEN\nTake 1 tablet(s) once daily by oral route for cholesterol.                \nLorazepam 1 mg tablet        01/20/2025        prescribed by DR. KENNEDY\nTake 1 tablet(s) as needed for anxiety.                \n\nProblems\nReviewed Problems\n\n        \u2022        Fibromyalgia - Onset: 06/12/2022\n        \u2022        Hypertension - Onset: 05/10/2018\n        \u2022        Hyperlipidemia - Onset: 07/17/2020\n        \u2022        Anxiety disorder - Onset: 01/20/2025\n        \u2022        Obesity - Onset: 09/11/2021\n        \u2022        Chronic fatigue syndrome - Onset: 02/18/2023\n        \u2022        Vitamin D deficiency - Onset: 03/14/2024\n\nFamily History\nReviewed Family History\n\nSocial History\nReviewed Social History\n\nSubstance Use\nWhat is your level of alcohol consumption?: Moderate\n\nDiet and Exercise\nWhat is your exercise level?: Light\n\nOther\nGeneral stress level: High\n\nSurgical History\nReviewed Surgical History\n\nPast Medical History\nReviewed Past Medical History\n\nScreening\nNone recorded.\n\nROS\nROS as noted in the HPI\n\nPhysical Exam\nNone recorded.\n\nAssessment / Plan\n\n        1.        Fibromyalgia -\nImproving\nContinue Lyrica 75 mg twice daily for pain management\nRecommend gentle stretching and low-impact exercises\nMonitor symptoms at follow-up\nM79.7: Fibromyalgia\n        2.        Hypertension -\nStable\nContinue Amlodipine 10 mg daily\nEncourage blood pressure monitoring and adherence to a low-sodium diet\nBP today was 138/82 mmHg\nI10: Essential (primary) hypertension\n        3.        Hyperlipidemia -\nStable\nContinue Atorvastatin 20 mg daily\nNext lipid panel in 6 months\nE78.5: Hyperlipidemia, unspecified\n        4.        Anxiety disorder -\nNew diagnosis\nStart Lorazepam 1 mg as needed for acute anxiety episodes\nRecommend behavioral therapy for long-term management\nF41.1: Generalized anxiety disorder\n        5.        Obesity -\nUnchanged\nEncourage weight loss through structured meal plans and regular physical activity\nE66.9: Obesity, unspecified\n        6.        Chronic fatigue syndrome -\nStable\nRecommend energy conservation techniques and graded exercise therapy\nMonitor for any changes in symptoms\nR53.82: Chronic fatigue, unspecified\n        7.        Vitamin D deficiency -\nImproving\nContinue vitamin D supplementation\nRecheck levels in 3 months\nE55.9: Vitamin D deficiency, unspecified\n\nReturn to Office\nPatient will return in 3 months for follow-up on fibromyalgia and hypertension management.\n\nEncounter Sign-Off\nEncounter not closed.\"",
+  "extracted_conditions": [
+    "Fibromyalgia",
+    "Hypertension",
+    "Hyperlipidemia",
+    "Anxiety disorder",
+    "Obesity",
+    "Chronic fatigue syndrome",
+    "Vitamin D deficiency"
+  ],
+  "enriched_conditions": [
+    {
+      "name": "Fibromyalgia",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Primary pulmonary hypertension",
+      "code": "I270",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Hyperlipidemia",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Alcohol abuse with alcohol-induced anxiety disorder",
+      "code": "F10180",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Morbid (severe) obesity due to excess calories",
+      "code": "E6601",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Chronic fatigue syndrome",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Vitamin D deficiency",
+      "code": null,
+      "hcc_relevant": false
+    }
+  ]
+}

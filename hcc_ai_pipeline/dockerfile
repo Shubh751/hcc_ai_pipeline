@@ -1,0 +1,31 @@
+FROM python:3.11-slim
+
+# System deps
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set workdir
+WORKDIR /app
+
+# Copy dependency files first (better caching)
+COPY pyproject.toml poetry.lock* ./
+
+# Install Poetry
+RUN pip install --no-cache-dir poetry
+
+# Disable Poetry venv (use container python)
+RUN poetry config virtualenvs.create false
+
+# Install deps
+RUN poetry install --no-interaction --no-ansi --no-root
+
+# Copy rest of project
+COPY . .
+
+# Expose LangGraph port
+EXPOSE 2024
+
+# Default command
+CMD ["langgraph", "dev", "--config", "src/config/langgraph.json" , "--host", "0.0.0.0", "--port", "2024"]

@@ -1,0 +1,50 @@
+{
+  "filename": "input_pdf.pdf",
+  "raw_text": "\"Patient \nName ROOB, NATHANIAL (84yo, M) ID# 2866 Appt. Date/Time 07/25/2024 03:00PM \nDOB 06/17/1940 Service Dept. athenaHealth \nProvider DR. TESTER \nInsurance   \nMed Primary: _SELF PAY_ \nInsurance # : 123456789 \nChief Complaint \nFollowup: Gastroesophageal reflux disease \nPatient's Pharmacies \nWALMART PHARMACY 1797 (ERX): 55 THOMASTON COMMONS WAY, THOMASTON, \nME 04861, Ph (207) 596-1060, Fax (207) 594-5980 \nWALMART PHARMACY 1797 (ERX): 55 THOMASTON COMMONS WAY, THOMASTON, \nME 04861, Ph (207) 596-1060, Fax (207) 594-5980 \nWALMART PHARMACY 1797 (ERX): 55 THOMASTON COMMONS WAY, THOMASTON, \nME 04861, Ph (207) 596-1060, Fax (207) 594-5980 \nWALMART PHARMACY 1797 (ERX): 55 THOMASTON COMMONS WAY, THOMASTON, \nME 04861, Ph (207) 596-1060, Fax (207) 594-5980 \nWALMART PHARMACY 1797 (ERX): 55 THOMASTON COMMONS WAY, THOMASTON, \nME 04861, Ph (207) 596-1060, Fax (207) 594-5980 \nWALMART PHARMACY 1797 (ERX): 55 THOMASTON COMMONS WAY, THOMASTON, \nME 04861, Ph (207) 596-1060, Fax (207) 594-5980 \nVitals \nBP: 128/80 sitting L arm 08/06/2024 11:57 pm \nBMI: 37.2 08/07/2024 12:59 am \nHt: 5 ft 10 in 08/07/2024 12:58 am \nWt: 259 lbs 08/07/2024 12:59 am \nT: 98.1 F\u00b0 08/06/2024 11:58 pm \nHR: 78 08/06/2024 11:58 pm \nAllergies \nReviewed Allergies \nMedications \nReviewed Medications \nName \nDate Source \nBrilinta 90 mg tablet \nTake 1 tablet(s) twice a day by oral route in the morning for 8 days. \n11/24/15 prescribed ATHENA \nEliquis 5 mg tablet \nTake 1 tablet(s) twice a day by oral route., start 07/20/2023 \n07/20/23 started Mehta Aditya \nfurosemide 20 mg tablet \nTake 1 tablet(s) every day by oral route., start 11/30/2021 \n11/30/21 started Mehta Aditya \nHumaLOG Mix 75-25 KwikPen U-100 insulin 100 unit/mL subcutaneous pen \nInject 10 unit(s) twice a day by subcutaneous route before meals for 5 days. \n11/21/15 prescribed Billy Brady, MD \nZithromax Z-Pak 250 mg tablet \nTAKE 2 TABLETS (500 MG) BY ORAL ROUTE ONCE DAILY FOR 1 DAY THEN 1 TABLET \n(250 MG) BY ORAL ROUTE ONCE DAILY FOR 4 DAYS \n11/21/15 prescribed ATHENA \nProblems \nReviewed Problems \nChronic hepatitis C - Onset: 02/04/2021 \nPolyneuropathy due to type 2 diabetes mellitus - Onset: 04/07/2020 \nVitamin D deficiency - Onset: 03/09/2022 \nHyperlipidemia - Onset: 09/08/2015 \nMorbid obesity - Onset: 07/25/2024 \nSmoker - Onset: 02/07/2013 \nMyopathy due to rheumatoid arthritis - Onset: 04/05/2022 \nEssential hypertension - Onset: 09/10/2014 \nAtrial fibrillation - Onset: 07/25/2024 \nChronic diastolic heart failure - Onset: 12/24/2020 \nAtherosclerosis of aorta - Onset: 10/21/2021 \nGastroesophageal reflux disease - Onset: 03/09/2022 \nDermopathy due to type 2 diabetes mellitus - Onset: 04/08/2020 \nFamily History \nReviewed Family History \nSocial History \nReviewed Social History \nSubstance Use \nWhat is your level of alcohol consumption?: None \nDiet and Exercise \nWhat is your exercise level?: Occasional \nOther \nGeneral stress level: Medium \nSurgical History \nReviewed Surgical History \nPast Medical History \nReviewed Past Medical History \nScreening \nNone recorded. \nROS \nROS as noted in the HPI \nPhysical Exam \nNone recorded. \nAssessment / Plan \n \n1. Gastroesophageal reflux disease - \n   Stable \n   Continue the antacids \n   F/U in 3 months \n   K21.9: Gastro-esophageal reflux disease without esophagitis \n \n2. Hyperglycemia due to type 2 diabetes mellitus - \n   Worsening \n   Continue Metformin1000 mg BID and Glimepiride 8 mg \n   Recommend a low sugar and low carbohydrate diet. Fruits and vegetables are acceptable. \n   Discussed 1/2 plate with non-starchy vegetables, 1/4 of plate with carbohydrates such as \nwhole grain, 1/4 of plate with lean protein. \n   Include healthy fats in your meal like: Olive oil, canola oil, avocado, and nuts \n   E11.65: Type 2 diabetes mellitus with hyperglycemia \n \n3. Chronic obstructive lung disease - \n   Unchanged \n   SPO2-98% today \n   Maintain current inhaler regimen: Tiotropium and Fluticasone/Salmeterol. \n   Counseled for smoking cessation today \n   J44.9: Chronic obstructive pulmonary disease, unspecified \n \n4. Essential hypertension - \n   Stable \n   on Metoprolol and Losartan-HCTZ \n   BP checks at home: high in morning before meds \n   BP: 140/80 today \n   I10: Essential (primary) hypertension \n \n5. Chronic systolic heart failure - \n   Improving \n   Continue current medications: Lisinopril 10 mg daily, Metoprolol 50 mg twice daily, \nFurosemide 40 mg daily. \n   Weight today was 259 lbs; Monitor weight daily to detect fluid retention. Schedule follow-up \nappointments every 3 months to assess symptom control and adjust treatment as necessary \n   Echocardiography ordered today to assess the CHF \n   I50.22: Chronic systolic (congestive) heart failure \n \n6. Chronic kidney disease stage 4 \n   Improving: As per lab results-egfr today 28 from 21 (in March 2024) \n   Continue ACE inhibitor. Start atorvastatin 10 mg \n   N18.4: Chronic kidney disease, stage 4 (severe) \n \n7. Morbid obesity - \n   Improving \n   Encouraged for at least 150 minutes of moderate-intensity aerobic activity per week. \n   Discussed importance of weight loss and healthy lifestyle changes \n   Continue to track dietary intake and physical activity \n   E66.01: Morbid (severe) obesity due to excess calories \n \nReturn to Office \nPatient will return to the office as needed. \nEncounter Sign-Off \nEncounter not closed.\"",
+  "extracted_conditions": [
+    "Gastroesophageal reflux disease",
+    "Hyperglycemia due to type 2 diabetes mellitus",
+    "Chronic obstructive lung disease",
+    "Essential hypertension",
+    "Chronic systolic heart failure",
+    "Chronic kidney disease stage 4",
+    "Morbid obesity"
+  ],
+  "enriched_conditions": [
+    {
+      "name": "Gastroesophageal reflux disease",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Diabetes mellitus due to underlying condition with hyperglycemia",
+      "code": "E0865",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Other specified chronic obstructive pulmonary disease",
+      "code": "J4489",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Essential hypertension",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Chronic systolic (congestive) heart failure",
+      "code": "I5022",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "code": "I130",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Morbid (severe) obesity due to excess calories",
+      "code": "E6601",
+      "hcc_relevant": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "graphs": {
+    "hcc_pipeline": "src/app/graph.py:graph"
+  },
+  "dependencies": [
+    "src",
+    "langgraph",
+    "langchain",
+    "google-cloud-aiplatform",
+    "pandas",
+    "pydantic",
+    "python-dotenv",
+    "loguru",
+    "python-docx",
+    "pymupdf"
+  ],
+    "env": {
+      "PYTHONPATH": "src",
+      "HCC_CSV_PATH": "data/HCC_relevant_codes.csv",
+      "GCP_PROJECT": "my-project-485118",
+      "GCP_LOCATION": "us-central1"
+    },
+    "server": {
+      "host": "127.0.0.1",
+      "port": 2024
+    }
+  }

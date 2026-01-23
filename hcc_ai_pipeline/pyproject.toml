@@ -1,0 +1,31 @@
+[project]
+name = "hcc-ai-pipeline"
+version = "0.1.0"
+description = "LLM-powered HCC extraction pipeline"
+authors = [{name = "Shubham Jaiswar", email = "shubhamjaiswar373@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+
+dependencies = [
+    "langgraph[cli] (>=1.0.7,<2.0.0)",
+    "langchain",
+    "google-cloud-aiplatform",
+    "pandas",
+    "pydantic",
+    "python-dotenv",
+    "loguru",
+    "python-docx (>=1.2.0,<2.0.0)",
+    "pymupdf (>=1.26.7,<2.0.0)",
+    "langgraph-cli (>=0.4.11,<0.5.0)",
+    "langgraph-api (>=0.7.8,<0.8.0)"
+]
+
+[tool.poetry]
+packages = [{ include = "*", from = "src" }]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

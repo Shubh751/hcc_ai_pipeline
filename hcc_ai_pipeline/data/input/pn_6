@@ -1,0 +1,37 @@
+"""Patient
+Name        Adam1 (66yo, M) ID# 2222        Appt. Date/Time        09/25/2024 03:00PM
+DOB        06/17/1960       Service Dept.        athenaHealth
+Provider        DR. Steele
+Insurance        
+Med Primary: *SELF PAY*
+Insurance # : 123456781
+Chief Complaint
+Annual examination
+
+Vitals
+BP:        138/90 sitting L arm 09/25/2024
+BMI:       42.2 09/25/2024 
+Ht:        5 ft 12 in 09/25/2024 
+Wt:        261 lbs 09/25/2024 
+T:        98.1 F° 09/25/2024 
+HR:        78 09/25/2024 
+
+HPI
+adam1 is a 64 y/o female presenting for her well-woman exam.
+
+diabetes - going well, often forgets her medications but denies any hyperglycemic sx 
+HTN- no issues
+COPD- no issues
+MDD - likes her new therapist 
+
+
+Assessment / Plan:
+1) Diabetes - A1c 7.5 in office.  
+Pt to follow up with ophthalmology for yearly eye exam
+
+2) HTN - stable, continue current meds 
+
+3) COPD - No issues, continue meds
+
+4) MDD -PHQ9 in office was 8, improved
+-continue outpatient mental health counseling "

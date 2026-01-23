@@ -1,0 +1,48 @@
+"""Patient
+Name        Adam2 (66yo, M) ID# 2222        Appt. Date/Time        09/25/2024 03:00PM
+DOB        06/17/1960       Service Dept.        athenaHealth
+Provider        DR. Steele
+Insurance        
+Med Primary: *SELF PAY*
+Insurance # : 123456781
+Chief Complaint
+Annual examination
+
+Vitals
+BP:        138/90 sitting L arm
+BMI:        37.2       09/25/2024 
+Ht:        6 ft 1 in   09/25/2024 
+Wt:        150 lbs    09/25/2024 
+T:        98.1 F°      09/25/2024 
+HR:        78          09/25/2024 
+
+HPI
+adam2 is a 65 y/o male presenting for his annual.
+1 -SUD- Pt attends NA, on suboxone.  No relapses 
+2- HLD, no med side effects will continue
+3-GERD increasing heart burn, PPI not helping 
+4- CAD - stable, follows with cardiology
+5- IBD - bowels regular, follows with GI
+
+Assessment / Plan:
+1) Substance use disorder moderate - F19.20
+- No relapses
+-will order UDS
+- continue to follow with NA
+- continue suboxone
+
+2) HLD - E78.5
+- No issues
+- Will order FLP
+- Continue statin
+
+3) GERD -  K21.9
+- Worsening
+- Will order EGD and GI consult
+
+4) CAD - I25.10 
+-stable, follow up with cardiology
+
+5) IBD - K51.90
+-stable, regular stools
+-follow up with GI"

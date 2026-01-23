@@ -1,0 +1,50 @@
+{
+  "filename": "pn_8",
+  "raw_text": "\"Patient\n\nName: HARRIS, LUCAS (43yo, M)\nID#: 7912\nAppt. Date/Time: 02/15/2025 01:00PM\nDOB: 09/03/1981\nService Dept.: athenaHealth\nProvider: DR. MORGAN\nInsurance:\nMed Primary: BLUE CROSS BLUE SHIELD\nInsurance #: 554422113\n\nChief Complaint\nFollowup: Type 1 diabetes and chronic migraine management\n\nPatient\u2019s Pharmacies\nWALGREENS PHARMACY 1055 (ERX): 789 FOREST AVENUE, PORTLAND, ME 04101, Ph (207) 555-9876, Fax (207) 555-6789\nWALGREENS PHARMACY 1055 (ERX): 789 FOREST AVENUE, PORTLAND, ME 04101, Ph (207) 555-9876, Fax (207) 555-6789\nWALGREENS PHARMACY 1055 (ERX): 789 FOREST AVENUE, PORTLAND, ME 04101, Ph (207) 555-9876, Fax (207) 555-6789\nWALGREENS PHARMACY 1055 (ERX): 789 FOREST AVENUE, PORTLAND, ME 04101, Ph (207) 555-9876, Fax (207) 555-6789\n\nVitals\nBP: 125/78 sitting L arm 02/15/2025 12:45 pm\nBMI: 24.5 02/15/2025 12:50 pm\nHt: 5 ft 11 in 02/15/2025 12:49 pm\nWt: 170 lbs 02/15/2025 12:50 pm\nT: 98.0 F\u00b0 02/15/2025 12:45 pm\nHR: 72 02/15/2025 12:45 pm\n\nAllergies\nReviewed Allergies\n\nMedications\nReviewed Medications\n\nName        Date        Source\nInsulin Glargine 100 units/mL        09/01/2024        prescribed by DR. MORGAN\nInject 20 units once daily by subcutaneous route at bedtime.                \nInsulin Lispro 100 units/mL        09/01/2024        prescribed by DR. MORGAN\nInject according to sliding scale with meals.                \nTopiramate 50 mg tablet        08/15/2023        started by DR. SMITH\nTake 1 tablet(s) twice daily by oral route for migraine prevention.                \nSumatriptan 100 mg tablet        10/10/2023        prescribed by DR. MORGAN\nTake 1 tablet(s) at onset of migraine; may repeat after 2 hours if needed, max 200 mg/day.                \nLosartan 50 mg tablet        06/20/2023        prescribed by DR. GREEN\nTake 1 tablet(s) once daily by oral route for blood pressure.                \n\nProblems\nReviewed Problems\n\n        \u2022        Type 1 diabetes mellitus - Onset: 07/25/2002\n        \u2022        Chronic migraine - Onset: 01/14/2015\n        \u2022        Hypertension - Onset: 05/18/2021\n        \u2022        Hyperlipidemia - Onset: 09/17/2022\n        \u2022        Gastroesophageal reflux disease (GERD) - Onset: 04/13/2024\n        \u2022        Obstructive sleep apnea - Onset: 02/02/2025\n        \u2022        Vitamin D deficiency - Onset: 06/20/2024\n        \u2022        Depression - Onset: 08/10/2023\n\nFamily History\nReviewed Family History\n\nSocial History\nReviewed Social History\n\nSubstance Use\nWhat is your level of alcohol consumption?: Social\n\nDiet and Exercise\nWhat is your exercise level?: Regular\n\nOther\nGeneral stress level: Low\n\nSurgical History\nReviewed Surgical History\n\nPast Medical History\nReviewed Past Medical History\n\nScreening\nNone recorded.\n\nROS\nROS as noted in the HPI\n\nPhysical Exam\nNone recorded.\n\nAssessment / Plan\n\n        1.        Type 1 diabetes mellitus -\nStable\nContinue insulin regimen with Glargine at bedtime and Lispro with meals\nEncourage frequent blood sugar monitoring and A1c check in 3 months\nE10.9: Type 1 diabetes mellitus without complications\n        2.        Chronic migraine -\nImproving\nContinue Topiramate 50 mg twice daily for prevention\nUse Sumatriptan at onset of acute episodes\nSchedule follow-up in 6 months or as needed\nG43.909: Migraine, unspecified, not intractable, without status migrainosus\n        3.        Obstructive sleep apnea -\nNew diagnosis\nInitiate CPAP therapy\nFollow up with sleep specialist in 3 months\nG47.33: Obstructive sleep apnea (adult)\n        4.        Hypertension -\nStable\nContinue Losartan 50 mg daily\nBP today was 125/78 mmHg\nI10: Essential (primary) hypertension\n        5.        Hyperlipidemia -\nStable\nContinue heart-healthy diet and regular exercise\nPlan to recheck lipid panel in 6 months\nE78.5: Hyperlipidemia, unspecified\n        6.        Gastroesophageal reflux disease (GERD) -\nImproving\nContinue lifestyle modifications and avoid trigger foods\nConsider PPI if symptoms worsen\nK21.9: Gastro-esophageal reflux disease without esophagitis\n        7.        Depression -\nImproving\nContinue counseling and monitor symptoms\nF32.9: Major depressive disorder, single episode, unspecified\n\nReturn to Office\nPatient will return to the office in 4 months for routine follow-up.\n\nEncounter Sign-Off\nEncounter not closed.\"",
+  "extracted_conditions": [
+    "Type 1 diabetes mellitus",
+    "Chronic migraine",
+    "Obstructive sleep apnea",
+    "Hypertension",
+    "Hyperlipidemia",
+    "Gastroesophageal reflux disease (GERD)",
+    "Depression"
+  ],
+  "enriched_conditions": [
+    {
+      "name": "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "code": "E1010",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Chronic migraine",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Obstructive sleep apnea",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Primary pulmonary hypertension",
+      "code": "I270",
+      "hcc_relevant": false
+    },
+    {
+      "name": "Hyperlipidemia",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Gastroesophageal reflux disease (GERD)",
+      "code": null,
+      "hcc_relevant": false
+    },
+    {
+      "name": "Neonatal cerebral depression",
+      "code": "P914",
+      "hcc_relevant": false
+    }
+  ]
+}
