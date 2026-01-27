@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 import vertexai
 from vertexai.generative_models import GenerativeModel
+from app.state import Condition
 
 # Added for retry/backoff support and optional Google error typing
 import time
@@ -68,26 +69,22 @@ class VertexLLMClient:
                 f"Error: {e}"
             ) from e
 
-    def extract_conditions(self, text: str) -> list[str]: 
+    def extract_conditions(self, text: str) -> list[Condition]:
         prompt = f"""Extract medical conditions from the assessment/plan section below.
-
-Return ONLY a valid JSON array of condition names. Do not include any explanations, markdown, or other text.
-Example format: ["Condition 1", "Condition 2", "Condition 3"]
-
-Assessment/Plan section:
-{text}
-"""
+                    Return ONLY a valid JSON array of objects with a 'name' field. Do not include any explanations, markdown, or other text.
+                    Example format:
+                    [ {{"name": "Hypertension"}}, {{"name": "Type 2 diabetes mellitus"}} ]
+                    Assessment/Plan section:
+                    {text}
+                    """
 
         try:
-            # response = self.model.generate_content(prompt)
-
             # Use retry with exponential backoff and jitter for transient failures
             response = self._retry_generate(prompt)
-
         except Exception as e:
             error_msg = str(e)
             error_type = type(e).__name__
-            
+
             # Check for credential-related errors
             if "EndOfStreamError" in error_type or "pyasn1" in error_msg or "EndOfStreamError" in error_msg:
                 creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "not set")
@@ -102,37 +99,33 @@ Assessment/Plan section:
                     "  https://console.cloud.google.com/iam-admin/serviceaccounts\n"
                     "Then set GOOGLE_APPLICATION_CREDENTIALS to the path of the new file."
                 ) from e
-            
+
             # Re-raise other errors as-is
             raise
-        
+
         # Parse the response text
-        response_text = response.text.strip() if response.text else ""
-        
-        # Try multiple parsing strategies
-        parsed_conditions = None
-        
-        # Strategy 1: Try parsing the entire response as JSON
+        response_text = response.text.strip() if getattr(response, "text", None) else ""
+
+        # Strategy 1: parse full text as JSON
+        parsed = None
         try:
-            parsed_conditions = json.loads(response_text)
+            parsed = json.loads(response_text)
         except json.JSONDecodeError:
-            pass
-        
-        # Strategy 2: Try extracting JSON from markdown code blocks
-        if parsed_conditions is None:
+            parsed = None
+
+        # Strategy 2: extract JSON from fenced code blocks
+        if parsed is None:
             json_match = re.search(r'```(?:json)?\s*(\[.*?\])\s*```', response_text, re.DOTALL)
             if json_match:
                 try:
-                    parsed_conditions = json.loads(json_match.group(1))
+                    parsed = json.loads(json_match.group(1))
                 except json.JSONDecodeError:
-                    pass
-        
-        # Strategy 3: Try finding the first JSON array in the text
-        if parsed_conditions is None:
-            # Find the first [ and try to parse from there
+                    parsed = None
+
+        # Strategy 3: find the first JSON array substring
+        if parsed is None:
             start_idx = response_text.find('[')
             if start_idx != -1:
-                # Try to find the matching closing bracket
                 bracket_count = 0
                 for i in range(start_idx, len(response_text)):
                     if response_text[i] == '[':
@@ -141,28 +134,46 @@ Assessment/Plan section:
                         bracket_count -= 1
                         if bracket_count == 0:
                             try:
-                                parsed_conditions = json.loads(response_text[start_idx:i+1])
+                                parsed = json.loads(response_text[start_idx:i+1])
                             except json.JSONDecodeError:
-                                pass
+                                parsed = None
                             break
-        
-        # Validate and return the parsed conditions
-        if parsed_conditions is not None:
-            if isinstance(parsed_conditions, list):
-                # Ensure all items are strings and filter out empty values
-                conditions = [str(cond).strip() for cond in parsed_conditions if cond]
-                if conditions:
-                    return conditions
-                else:
-                    logger.warning("LLM returned empty list of conditions")
-                    return []
-            else:
-                logger.warning(f"LLM returned non-list type: {type(parsed_conditions)}; returning empty list")
-                return []
-        else:
+
+        # Validate and normalize to List[Condition]
+        if parsed is None:
             logger.warning("Failed to parse LLM output as JSON")
-            logger.debug(f"LLM response text: {response_text[:500]}")  # Log first 500 chars for debugging
+            logger.debug(f"LLM response text: {response_text[:500]}")  # first 500 chars for debugging
             return []
+
+        if not isinstance(parsed, list):
+            logger.warning(f"LLM returned non-list type: {type(parsed)}; returning empty list")
+            return []
+
+        conditions: list[Condition] = []
+
+        # Preferred: list of dicts with 'name'
+        if parsed and isinstance(parsed[0], dict):
+            for obj in parsed:
+                name = str(obj.get("name", "")).strip()
+                if not name:
+                    continue
+                code_val = obj.get("code")
+                code = None if code_val in (None, "", "nan") else str(code_val).strip()
+                hcc_flag = bool(obj.get("hcc_relevant")) if "hcc_relevant" in obj else False
+                conditions.append(Condition(name=name, code=code, hcc_relevant=hcc_flag))
+
+        # Back-compat: list of strings
+        elif parsed and isinstance(parsed[0], str):
+            for s in parsed:
+                s_norm = str(s).strip()
+                if s_norm:
+                    conditions.append(Condition(name=s_norm))
+
+        if not conditions:
+            logger.warning("LLM returned no valid conditions after normalization")
+            return []
+
+        return conditions
 
 
     def _should_retry(self, exc: Exception) -> bool:

@@ -37,7 +37,14 @@ def main():
                     result_state = PipelineState(**result)
                 else:
                     result_state = result
-                json.dump(result_state.model_dump(), f, indent=2)
+                    
+                # existing
+                # json.dump(result_state.model_dump(), f, indent=2)
+                # replace with:
+                data = result_state.model_dump()
+                # Down-convert extracted_conditions to a list of names for output
+                data["extracted_conditions"] = [c.name for c in result_state.extracted_conditions]
+                json.dump(data, f, indent=2)
                 
     except Exception as e:
         print(f"Error: {e}")
