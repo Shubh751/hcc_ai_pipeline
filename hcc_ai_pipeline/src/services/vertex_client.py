@@ -6,6 +6,14 @@ from pathlib import Path
 import vertexai
 from vertexai.generative_models import GenerativeModel
 
+# Added for retry/backoff support and optional Google error typing
+import time
+import random
+try:
+    from google.api_core import exceptions as gexc
+except Exception:
+    gexc = None
+
 
 class VertexLLMClient:
     def __init__(self, project: str, location: str):
@@ -60,7 +68,7 @@ class VertexLLMClient:
                 f"Error: {e}"
             ) from e
 
-    def extract_conditions(self, text: str) -> list[str]:
+    def extract_conditions(self, text: str) -> list[str]: 
         prompt = f"""Extract medical conditions from the assessment/plan section below.
 
 Return ONLY a valid JSON array of condition names. Do not include any explanations, markdown, or other text.
@@ -71,7 +79,11 @@ Assessment/Plan section:
 """
 
         try:
-            response = self.model.generate_content(prompt)
+            # response = self.model.generate_content(prompt)
+
+            # Use retry with exponential backoff and jitter for transient failures
+            response = self._retry_generate(prompt)
+
         except Exception as e:
             error_msg = str(e)
             error_type = type(e).__name__
@@ -151,3 +163,34 @@ Assessment/Plan section:
             logger.warning("Failed to parse LLM output as JSON")
             logger.debug(f"LLM response text: {response_text[:500]}")  # Log first 500 chars for debugging
             return []
+
+
+    def _should_retry(self, exc: Exception) -> bool:
+        # Prefer Google API typed exceptions when available; otherwise fallback to message heuristics.
+        if gexc and isinstance(exc, (gexc.ResourceExhausted, gexc.DeadlineExceeded, gexc.ServiceUnavailable, gexc.InternalServerError, gexc.Unknown)):
+            return True
+        msg = str(exc).lower()
+        # Treat quota/timeouts/unavailability as retryable.
+        if any(s in msg for s in ["resource_exhausted", "quota", "temporar", "deadlineexceeded", "unavailable", "internal", "502", "503", "504", "429"]):
+            return True
+        # Treat auth/permission/invalid-argument and 4xx as non-retryable.
+        if any(s in msg for s in ["unauthenticated", "permission_denied", "invalid_argument", "credentials", "forbidden", "400", "401", "403"]):
+            return False
+        # Default to non-retryable to avoid retry storms on unknown errors.
+        return False
+
+    def _retry_generate(self, prompt: str, max_retries: int = 3, base_delay: float = 1.0, max_delay: float = 8.0):
+        # Exponential backoff with full jitter per attempt:
+        # delay = min(max_delay, base_delay * 2^attempt) * (0.5 + random())
+        attempt = 0
+        while True:
+            try:
+                return self.model.generate_content(prompt)
+            except Exception as e:
+                # Stop if non-retryable or attempts exhausted; propagate original error.
+                if not self._should_retry(e) or attempt >= max_retries:
+                    raise
+                sleep_s = min(max_delay, base_delay * (2 ** attempt)) * (0.5 + random.random())
+                time.sleep(sleep_s)
+                attempt += 1
+                logger.error(f"retrying {attempt} times")
