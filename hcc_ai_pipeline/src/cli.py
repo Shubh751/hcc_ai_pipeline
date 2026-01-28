@@ -11,6 +11,11 @@ from app.graph import build_graph
 from app.state import PipelineState
 
 
+# Worker that processes a single note end-to-end:
+# - Builds the PipelineState
+# - Invokes the LangGraph graph
+# - Normalizes output so extracted_conditions are emitted as list[str]
+# - Writes JSON via atomic rename to avoid partial files on failure
 def _process_one(filename: str, text: str, graph, output_dir: str) -> str:
     state = PipelineState(filename=filename, raw_text=text)
     result = graph.invoke(state)
@@ -29,17 +34,21 @@ def _process_one(filename: str, text: str, graph, output_dir: str) -> str:
     tmp_path = output_path + ".tmp"
     with open(tmp_path, "w") as f:
         json.dump(data, f, indent=2)
+    # Atomic write ensures readers never see a partially-written file
     os.replace(tmp_path, output_path)
     return output_path
 
 
 def main():
     try:
+        # Load typed settings (env-driven paths and GCP config)
         settings = get_settings()
 
+        # Ingest notes from INPUT_DIR (supports txt/pdf/docx)
         loader = FileLoader(settings.input_dir)
         notes = loader.load_files()
 
+        # Read-only lookup for HCC/ICD enrichment
         hcc_service = HCCLookupService(settings.hcc_csv_path)
 
         llm_client = None
@@ -50,7 +59,8 @@ def main():
         hcc_node = HCCEvaluationNode(hcc_service)
         graph = build_graph(extract_node, hcc_node)
 
-        # Concurrent processing of files
+        # Concurrent processing of files (I/O + network bound workload)
+        # WORKERS can be tuned via env; defaults to 8
         workers = int(os.getenv("WORKERS", "8"))
         futures = []
         with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -61,6 +71,7 @@ def main():
                 try:
                     fut.result()
                 except Exception as e:
+                    # Log per-file failure but allow other files to continue
                     print(f"Error: {e}")
                 
     except Exception as e:
