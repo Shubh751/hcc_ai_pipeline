@@ -2,7 +2,7 @@
   "filename": "pn_7",
   "raw_text": "\"\"\"Patient\nName        Adam2 (66yo, M) ID# 2222        Appt. Date/Time        09/25/2024 03:00PM\nDOB        06/17/1960       Service Dept.        athenaHealth\nProvider        DR. Steele\nInsurance        \nMed Primary: *SELF PAY*\nInsurance # : 123456781\nChief Complaint\nAnnual examination\n\nVitals\nBP:        138/90 sitting L arm\nBMI:        37.2       09/25/2024 \nHt:        6 ft 1 in   09/25/2024 \nWt:        150 lbs    09/25/2024 \nT:        98.1 F\u00b0      09/25/2024 \nHR:        78          09/25/2024 \n\nHPI\nadam2 is a 65 y/o male presenting for his annual.\n1 -SUD- Pt attends NA, on suboxone.  No relapses \n2- HLD, no med side effects will continue\n3-GERD increasing heart burn, PPI not helping \n4- CAD - stable, follows with cardiology\n5- IBD - bowels regular, follows with GI\n\nAssessment / Plan:\n1) Substance use disorder moderate - F19.20\n- No relapses\n-will order UDS\n- continue to follow with NA\n- continue suboxone\n\n2) HLD - E78.5\n- No issues\n- Will order FLP\n- Continue statin\n\n3) GERD -  K21.9\n- Worsening\n- Will order EGD and GI consult\n\n4) CAD - I25.10 \n-stable, follow up with cardiology\n\n5) IBD - K51.90\n-stable, regular stools\n-follow up with GI\"",
   "extracted_conditions": [
-    "Substance use disorder moderate",
+    "Substance use disorder",
     "HLD",
     "GERD",
     "CAD",

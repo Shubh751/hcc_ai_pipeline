@@ -3,9 +3,9 @@
   "raw_text": "\"\"\"Patient\nName        Adam1 (66yo, M) ID# 2222        Appt. Date/Time        09/25/2024 03:00PM\nDOB        06/17/1960       Service Dept.        athenaHealth\nProvider        DR. Steele\nInsurance        \nMed Primary: *SELF PAY*\nInsurance # : 123456781\nChief Complaint\nAnnual examination\n\nVitals\nBP:        138/90 sitting L arm 09/25/2024\nBMI:       42.2 09/25/2024 \nHt:        5 ft 12 in 09/25/2024 \nWt:        261 lbs 09/25/2024 \nT:        98.1 F\u00b0 09/25/2024 \nHR:        78 09/25/2024 \n\nHPI\nadam1 is a 64 y/o female presenting for her well-woman exam.\n\ndiabetes - going well, often forgets her medications but denies any hyperglycemic sx \nHTN- no issues\nCOPD- no issues\nMDD - likes her new therapist \n\n\nAssessment / Plan:\n1) Diabetes - A1c 7.5 in office.  \nPt to follow up with ophthalmology for yearly eye exam\n\n2) HTN - stable, continue current meds \n\n3) COPD - No issues, continue meds\n\n4) MDD -PHQ9 in office was 8, improved\n-continue outpatient mental health counseling \"",
   "extracted_conditions": [
     "Diabetes",
-    "Hypertension",
+    "HTN",
     "COPD",
-    "Major Depressive Disorder"
+    "MDD"
   ],
   "enriched_conditions": [
     {
@@ -14,8 +14,8 @@
       "hcc_relevant": false
     },
     {
-      "name": "Primary pulmonary hypertension",
-      "code": "I270",
+      "name": "HTN",
+      "code": null,
       "hcc_relevant": false
     },
     {
@@ -24,8 +24,8 @@
       "hcc_relevant": false
     },
     {
-      "name": "Major depressive disorder, single episode, moderate",
-      "code": "F321",
+      "name": "MDD",
+      "code": null,
       "hcc_relevant": false
     }
   ]

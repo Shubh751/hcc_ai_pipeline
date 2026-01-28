@@ -21,6 +21,9 @@
 - command > docker build -t hcc-langgraph .
 - command > docker run -p 2024:2024 --name hcc-lg hcc-langgraph
 			
+## Step 7 - To run the web app run below command from root dir of project
+- command > poetry run uvicorn server.api:app --host 0.0.0.0 --port 8000
+
 # Note - 
 - ("gemini-2.5-flash") model is used in code. 
 - This code is working for Langgraph AI studio only with direct execution and docker
